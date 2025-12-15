@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@font-face{
+  font-family: ger;
+  src: url(./assets/fonts/Ger.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: vin;
+  src: url(./assets/fonts/vin.ttf) format("truetype");
+}
+
+
+
+:root {
+  --wine: #7a1c1c;
+  --ivory: #f6f2ea;
+}
+
+.font-serifFancy {
+  font-family: "Playfair Display", serif;
+}
+
+.font-script {
+  font-family: "Great Vibes", cursive;
+}
+
+@theme{
+  --font-ger:ger;
+  --font-vin:vin;
+}
+
