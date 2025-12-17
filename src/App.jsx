@@ -6,11 +6,10 @@ import SaveTheDate from "./components/SaveTheDate";
 import OurJourney from "./components/OurJourney";
 import Timeline from "./components/Timeline";
 import VenueStay from "./components/VenueStay";
-import FAQ from "./components/FAQ";
 import RSVP from "./components/RSVP";
 import Navbar from "./components/Navbar";
 
-export default function App() {
+export default function Home() {
   return (
     <div className="bg-[var(--wine)]">
       <Navbar />
@@ -20,7 +19,6 @@ export default function App() {
       <OurJourney />
       <Timeline />
       <VenueStay />
-      <FAQ />
       <RSVP />
     </div>
   );

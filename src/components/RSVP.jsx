@@ -1,45 +1,78 @@
 // components/RSVP.jsx
-export default function RSVP() {
+import { motion } from "framer-motion";
+
+export default function Footer() {
   return (
-    <section className="bg-[var(--wine)] py-16 px-6 flex justify-center">
-      <div className="w-full max-w-4xl text-center text-[var(--ivory)]">
-        <h2 className="font-script text-4xl md:text-5xl mb-4">
+    <footer className="bg-[var(--ivory)] py-20 px-6 flex justify-center font-vin">
+      <div className="w-full max-w-4xl text-center text-[var(--wine)]">
+        
+        {/* GOOD WISHES / HEADING */}
+        <motion.h2 
+          className="text-4xl md:text-6xl mb-6 font-bold"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           We can't wait to celebrate with you
-        </h2>
-        <p className="text-sm md:text-base leading-7 max-w-2xl mx-auto mb-10 opacity-90">
-          Your presence means the world to us. We feel incredibly blessed to share this special 
-          weekend with our favourite people and can't wait to make lifelong memories together 
-          on the dance floor, at the mandap, and everywhere in between.
-        </p>
+        </motion.h2>
 
-        <div className="bg-[var(--ivory)] text-[var(--wine)] inline-block px-8 py-6 rounded-md shadow-md border border-[var(--ivory)]/60">
-          <h3 className="tracking-[0.3em] text-xs uppercase mb-3">Kindly RSVP</h3>
-          <p className="text-sm mb-5 max-w-md mx-auto">
-            Please confirm your attendance by 1st September 2030 so we can finalise seating, 
-            stay arrangements, and meals.
-          </p>
+        <motion.p 
+          className="text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto mb-16 font-medium"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >
+          Your presence means the world to us. We feel incredibly blessed to share 
+          this special weekend with our favourite people and can't wait to make 
+          lifelong memories together.
+        </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="#rsvp"
-              className="px-6 py-2 border border-[var(--wine)] bg-[var(--wine)] text-[var(--ivory)] text-sm tracking-[0.2em] uppercase rounded-full hover:bg-transparent hover:text-[var(--wine)] transition-colors duration-300"
-            >
-              RSVP Online
-            </a>
-            <a
-              href="mailto:youremail@example.com?subject=Wedding%20RSVP"
-              className="px-6 py-2 border border-[var(--wine)] text-sm tracking-[0.2em] uppercase rounded-full hover:bg-[var(--wine)] hover:text-[var(--ivory)] transition-colors duration-300"
-            >
-              Email Your RSVP
-            </a>
+        {/* CONTACT & ADDRESS BOX */}
+        <motion.div 
+          className="border-t border-b border-[var(--wine)]/20 py-12 mb-16"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* Address */}
+            <div>
+              <h3 className="tracking-[0.3em] text-sm uppercase mb-4 font-bold">Residential Address</h3>
+              <p className="text-lg md:text-xl opacity-90">
+                123, Heritage Residency,<br />
+                Khar Road, Navi Mumbai,<br />
+                Maharashtra - 410210
+              </p>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h3 className="tracking-[0.3em] text-sm uppercase mb-4 font-bold">Contact Details</h3>
+              <p className="text-lg md:text-xl opacity-90">
+                +91 98765 43210<br />
+                +91 12345 67890<br />
+                hello@weddingcelebration.com
+              </p>
+            </div>
           </div>
+        </motion.div>
 
-          <p className="text-[0.7rem] mt-4 opacity-80">
-            When you RSVP, please mention the total number of family members attending 
-            and any special meal requirements.
-          </p>
-        </div>
+        {/* COPYRIGHT */}
+        <motion.div 
+          className="opacity-70 text-sm tracking-widest uppercase"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.7 }}
+        >
+          <p className="mb-2">© 2024 Starx Innovation and Solutions</p>
+          <p className="font-bold">Made with Love by Ashwita K</p>
+        </motion.div>
+
       </div>
-    </section>
+    </footer>
   );
 }

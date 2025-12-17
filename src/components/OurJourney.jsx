@@ -17,62 +17,87 @@ export default function OurJourney() {
     }
   ];
 
+  const wineTextStyle = {
+    color: "var(--wine)"
+  };
+
   return (
     <motion.section
-      id="journey"
-      className="min-h-screen bg-[var(--wine)] flex items-center justify-center py-16 px-6 font-vin"
+      id="our-story"
+      className="min-h-screen bg-[var(--wine)] flex items-center justify-center py-12 sm:py-20 px-4 sm:px-6 font-vin overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 1 }}
     >
-      <div className="w-full max-w-5xl text-[var(--ivory)]">
+      <div className="w-full max-w-6xl relative">
 
-        {/* HEADING */}
+        {/* HEADING - Updated to Title Case / Normal Casing */}
         <motion.h2
-          className="text-center tracking-[0.4em] text-xl uppercase mb-6 font-vin"
+          className="text-center  text-5xl  mb-8 sm:mb-12 font-bold text-[var(--ivory)]"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1.2 }}
         >
           Our Journey Together
         </motion.h2>
 
-        {/* FRAME */}
+        {/* MAIN BOX */}
         <motion.div
-          className="border border-[var(--ivory)]/40 p-8 md:p-12"
-          initial={{ scale: 0.97, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
+          className="relative border-2 border-[var(--ivory)]/30 p-6 sm:p-10 md:p-16 bg-[var(--ivory)] shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-sm mx-auto"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          {/* ORNAMENTAL CORNERS */}
+          <div className="absolute top-2 left-2 sm:top-4 sm:left-4 w-6 h-6 sm:w-10 sm:h-10 border-t-2 border-l-2 border-[var(--wine)]/20"></div>
+          <div className="absolute top-2 right-2 sm:top-4 sm:right-4 w-6 h-6 sm:w-10 sm:h-10 border-t-2 border-r-2 border-[var(--wine)]/20"></div>
+          <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 w-6 h-6 sm:w-10 sm:h-10 border-b-2 border-l-2 border-[var(--wine)]/20"></div>
+          <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 w-6 h-6 sm:w-10 sm:h-10 border-b-2 border-r-2 border-[var(--wine)]/20"></div>
+
           {/* SUBTEXT */}
           <motion.p
-            className="font-script text-3xl md:text-4xl text-center mb-10 font-vin"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            className="text-3xl sm:text-4xl md:text-4xl text-center mb-12 sm:mb-20 leading-tight font-vin font-bold"
+            style={wineTextStyle}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.4, duration: 1 }}
           >
-            From our first hello to this beautiful forever.
+            From our first hello ,to this beautiful forever.<br /> 
+            <span className="text-xl sm:text-2xl md:text-3xl block mt-2 sm:mt-4 opacity-70 font-medium font-vin"></span>
           </motion.p>
 
           {/* TIMELINE */}
-          <div className="space-y-10">
+          <div className="space-y-10 sm:space-y-16 relative">
+            {/* VERTICAL CONNECTING LINE */}
+            <div className="absolute left-[23px] sm:left-[31px] top-8 bottom-8 w-[1px] bg-[var(--wine)]/20" />
+
             {timeline.map((item, index) => (
               <motion.div
                 key={item.year}
-                className="flex flex-col md:flex-row md:items-start md:gap-6"
-                initial={{ opacity: 0, x: -30 }}
+                className="flex flex-row items-center gap-6 sm:gap-12 relative z-10"
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
+                whileHover={{ x: 10 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2, duration: 0.6 }}
+                transition={{ delay: index * 0.3, duration: 0.7 }}
               >
-                <div className="text-sm tracking-[0.2em] uppercase md:w-1/4 mb-2 md:mb-0">
+                {/* YEAR CIRCLE */}
+                <div 
+                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-[var(--wine)]/40 flex items-center justify-center text-sm sm:text-xl font-bold bg-[var(--ivory)] shrink-0 shadow-md font-vin"
+                  style={wineTextStyle}
+                >
                   {item.year}
                 </div>
-                <p className="md:w-3/4 leading-7 md:text-base text-2xl font-vin">
+
+                {/* TEXT CONTENT */}
+                <p 
+                  className="w-full leading-snug sm:leading-relaxed text-lg sm:text-2xl md:text-3xl font-bold tracking-tight font-vin"
+                  style={wineTextStyle}
+                >
                   {item.text}
                 </p>
               </motion.div>
