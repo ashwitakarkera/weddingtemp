@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function YouAreInvited({ floral }) {
   return (
     <motion.section
-      id="invited"
+      id="invite"
       className="min-h-screen bg-[var(--ivory)] flex items-center justify-center p-4 sm:p-6 md:p-10"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -11,7 +11,7 @@ export default function YouAreInvited({ floral }) {
       viewport={{ once: true }}
     >
       {/* Wine background card */}
-      <div className="bg-[var(--wine)] p-8 sm:p-12 md:p-16 rounded-none shadow-2xl text-[var(--ivory)] w-full max-w-7xl relative overflow-hidden flex items-center justify-center min-h-[80vh] sm:min-h-0">
+      <div className="bg-[var(--wine)] p-8 sm:p-12 md:p-16 rounded-none shadow-2xl text-[var(--ivory)] w-full max-w-6xl relative overflow-hidden flex items-center justify-center min-h-[80vh] sm:min-h-0">
         
         {/* INNER BORDER LINES - Frame style matching Hero */}
         <div className="absolute inset-4 sm:inset-6 pointer-events-none">

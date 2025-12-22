@@ -17,14 +17,15 @@ export default function OurJourney() {
     }
   ];
 
-  const wineTextStyle = {
-    color: "var(--wine)"
+  // Text color is now Ivory to stand out against the Wine card
+  const ivoryTextStyle = {
+    color: "var(--ivory)"
   };
 
   return (
     <motion.section
-      id="our-story"
-      className="min-h-screen bg-[var(--wine)] flex items-center justify-center py-12 sm:py-20 px-4 sm:px-6 font-vin overflow-hidden"
+      id="journey"
+      className="min-h-screen bg-[var(--ivory)] flex items-center justify-center py-12 sm:py-20 px-4 sm:px-6 font-vin overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -32,9 +33,9 @@ export default function OurJourney() {
     >
       <div className="w-full max-w-6xl relative">
 
-        {/* HEADING - Updated to Title Case / Normal Casing */}
+        {/* HEADING - Changed to Wine to sit on the Ivory main background */}
         <motion.h2
-          className="text-center  text-5xl  mb-8 sm:mb-12 font-bold text-[var(--ivory)]"
+          className="text-center text-5xl mb-8 sm:mb-12 font-bold text-[var(--wine)]"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -43,37 +44,36 @@ export default function OurJourney() {
           Our Journey Together
         </motion.h2>
 
-        {/* MAIN BOX */}
+        {/* MAIN BOX - Now Wine Background */}
         <motion.div
-          className="relative border-2 border-[var(--ivory)]/30 p-6 sm:p-10 md:p-16 bg-[var(--ivory)] shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-sm mx-auto"
+          className="relative p-8 sm:p-12 md:p-20 bg-[var(--wine)] shadow-[0_25px_60px_rgba(0,0,0,0.4)] rounded-sm mx-auto"
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {/* ORNAMENTAL CORNERS */}
-          <div className="absolute top-2 left-2 sm:top-4 sm:left-4 w-6 h-6 sm:w-10 sm:h-10 border-t-2 border-l-2 border-[var(--wine)]/20"></div>
-          <div className="absolute top-2 right-2 sm:top-4 sm:right-4 w-6 h-6 sm:w-10 sm:h-10 border-t-2 border-r-2 border-[var(--wine)]/20"></div>
-          <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 w-6 h-6 sm:w-10 sm:h-10 border-b-2 border-l-2 border-[var(--wine)]/20"></div>
-          <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 w-6 h-6 sm:w-10 sm:h-10 border-b-2 border-r-2 border-[var(--wine)]/20"></div>
+          {/* IVORY L-SHAPED CORNERS */}
+          <div className="absolute top-4 left-4 w-8 h-8 sm:w-12 sm:h-12 border-t-2 border-l-2 border-[var(--ivory)]"></div>
+          <div className="absolute top-4 right-4 w-8 h-8 sm:w-12 sm:h-12 border-t-2 border-r-2 border-[var(--ivory)]"></div>
+          <div className="absolute bottom-4 left-4 w-8 h-8 sm:w-12 sm:h-12 border-b-2 border-l-2 border-[var(--ivory)]"></div>
+          <div className="absolute bottom-4 right-4 w-8 h-8 sm:w-12 sm:h-12 border-b-2 border-r-2 border-[var(--ivory)]"></div>
 
           {/* SUBTEXT */}
           <motion.p
-            className="text-3xl sm:text-4xl md:text-4xl text-center mb-12 sm:mb-20 leading-tight font-vin font-bold"
-            style={wineTextStyle}
+            className="text-3xl sm:text-4xl md:text-5xl text-center mb-16 sm:mb-24 leading-tight font-vin font-bold"
+            style={ivoryTextStyle}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 1 }}
           >
-            From our first hello ,to this beautiful forever.<br /> 
-            <span className="text-xl sm:text-2xl md:text-3xl block mt-2 sm:mt-4 opacity-70 font-medium font-vin"></span>
+            From our first hello, to this beautiful forever.
           </motion.p>
 
           {/* TIMELINE */}
-          <div className="space-y-10 sm:space-y-16 relative">
-            {/* VERTICAL CONNECTING LINE */}
-            <div className="absolute left-[23px] sm:left-[31px] top-8 bottom-8 w-[1px] bg-[var(--wine)]/20" />
+          <div className="space-y-12 sm:space-y-20 relative">
+            {/* VERTICAL CONNECTING LINE - Ivory semi-transparent */}
+            <div className="absolute left-[23px] sm:left-[31px] top-8 bottom-8 w-[1px] bg-[var(--ivory)]/30" />
 
             {timeline.map((item, index) => (
               <motion.div
@@ -85,10 +85,9 @@ export default function OurJourney() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.3, duration: 0.7 }}
               >
-                {/* YEAR CIRCLE */}
+                {/* YEAR CIRCLE - Ivory bg with Wine text */}
                 <div 
-                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-[var(--wine)]/40 flex items-center justify-center text-sm sm:text-xl font-bold bg-[var(--ivory)] shrink-0 shadow-md font-vin"
-                  style={wineTextStyle}
+                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-[var(--ivory)] flex items-center justify-center text-sm sm:text-xl font-bold bg-[var(--ivory)] shrink-0 shadow-lg font-vin text-[var(--wine)]"
                 >
                   {item.year}
                 </div>
@@ -96,7 +95,7 @@ export default function OurJourney() {
                 {/* TEXT CONTENT */}
                 <p 
                   className="w-full leading-snug sm:leading-relaxed text-lg sm:text-2xl md:text-3xl font-bold tracking-tight font-vin"
-                  style={wineTextStyle}
+                  style={ivoryTextStyle}
                 >
                   {item.text}
                 </p>

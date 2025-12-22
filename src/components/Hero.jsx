@@ -1,3 +1,4 @@
+// Hero.jsx
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 
@@ -8,10 +9,12 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative w-full max-w-[95%] lg:max-w-7xl bg-[var(--ivory)] py-12 sm:py-20 px-4 sm:px-10 md:px-16 border-2 border-[var(--wine)] flex flex-col justify-center min-h-[90vh] sm:min-h-0"
+        className="relative w-full max-w-[95%] lg:max-w-6xl bg-[var(--ivory)] py-12 sm:py-20 px-4 sm:px-10 md:px-16 border-2 border-[var(--wine)] flex flex-col justify-center min-h-[90vh] sm:min-h-0"
       >
-        {/* NAVBAR COMPONENT */}
-        <Navbar />
+        {/* NAVBAR (unchanged) */}
+       <div className="flex justify-center">
+       <Navbar />
+        </div>
 
         {/* HERO CONTENT */}
         <section className="text-center text-[var(--wine)] py-6 sm:py-10">
@@ -46,7 +49,6 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
-            // Changed from uppercase tracking-widest to lowercase sentence case
             className="font-vin text-xl sm:text-3xl md:text-4xl mt-10 sm:mt-14 font-medium italic"
           >
             are getting married
@@ -63,7 +65,6 @@ export default function Hero() {
           19<sup className="text-[0.6em] ml-0.5">TH</sup> OCTOBER 2030
         </motion.footer>
 
-        {/* CORNER ORNAMENTS */}
         <CornerOrnaments />
       </motion.div>
     </section>
